@@ -7,7 +7,7 @@ export type Team = {
 };
 
 export type EmployeeType = {
-    id: string,
+    id: number,
     type: string,
     value: {
         birthdate: string,
@@ -21,7 +21,7 @@ export type EmployeeType = {
             mobile: string,
         },
         name: string,
-        office_id: string;
-        office: OfficeType;
+        office_id?: string;
+        office?: OfficeType;
     }
 }

@@ -52,7 +52,7 @@ export const Employee = (props: Props) => {
             <h4>Verjaardag: {day}-{month}-{year} </h4>
             <h4>Favoriet gerecht: {props.employee.value.favorite_food} </h4>
             <h4>Favoriet huisdier: {props.employee.value.favorite_pet} </h4>
-            <h4>Werkt vanuit kantoor: {props.employee.value.office.value.city}</h4>
+            <h4>Werkt vanuit kantoor: {props.employee.value.office?.value.city}</h4>
           </EmployeeModal>
         </Modal.Container>
       </Modal.Root>
