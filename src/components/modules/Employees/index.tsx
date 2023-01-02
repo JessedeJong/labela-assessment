@@ -8,7 +8,7 @@ import { EmployeeType } from 'types';
 export const Employees = () => {
   const { isLoading, data } = useGetTeam();
 
-  const employees = data?.items.employees || [];
+  const employees: EmployeeType[] = data?.items[0].employees || [];
 
   const employeeFunctions: string[] = [];
 
