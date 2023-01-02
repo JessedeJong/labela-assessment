@@ -1,3 +1,5 @@
+import { OfficeType } from "types";
+
 export type Team = {
     items: {
         employees: EmployeeType[]
@@ -20,6 +22,6 @@ export type EmployeeType = {
         },
         name: string,
         office_id: string;
-        office_location: string | null;
+        office: OfficeType;
     }
 }

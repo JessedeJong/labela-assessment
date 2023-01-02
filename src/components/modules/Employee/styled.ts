@@ -6,6 +6,10 @@ export const EmployeeContainer = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const EmployeeInfo = styled.h3`
@@ -21,3 +25,15 @@ export const EmployeeInfo = styled.h3`
   bottom: 0;
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6909138655462185) 100%);
 `;
+
+export const EmployeeModal = styled.div`
+  background-color: #FFFFFF;
+
+  h2 {
+    margin: 8px 0;
+  }
+
+  h4 {
+    margin: 4px 0;
+  }
+`

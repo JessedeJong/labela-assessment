@@ -22,10 +22,10 @@ export const Employees = () => {
       employeeFunctions.push(employee.value.function);
     }
 
-    // Add office location to employee
+    // Add office to employee
     offices.forEach((office) => {
       if (office.id === employee.value.office_id) {
-        employee.value.office_location = office.value.city
+        employee.value.office = office;
       }
     });
   });
@@ -38,7 +38,6 @@ export const Employees = () => {
   // Check if filter is set, filter list accordingly
   const filteredEmployees: EmployeeType[] = [];
   if (filter !== "") {
-    console.log('test')
     employees.forEach((employee) => {
       if (employee.value.function === filter) {
         filteredEmployees.push(employee);
@@ -59,9 +58,7 @@ export const Employees = () => {
           <Grid>
             {employeeList.map((employee: EmployeeType) => (
               <Employee
-                name={employee.value.name}
-                function={employee.value.function}
-                small={employee.value.image.small} alt={employee.value.image.alt} key={employee.id} />
+                employee={employee} key={employee.id} />
             ))}
           </Grid>
         </>

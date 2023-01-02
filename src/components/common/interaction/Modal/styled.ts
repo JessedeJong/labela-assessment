@@ -8,6 +8,7 @@ export const ModalOverlay = styled(RadixModal.Overlay)`
   display: grid;
   place-items: center;
   overflow-y: auto;
+  z-index: 10;
 `;
 
 export const ModalWrapper = styled(RadixModal.Content)<ModalContentProps>`
@@ -52,8 +53,8 @@ export const ModalFooter = styled.div`
 
 export const ModalClose = styled(RadixModal.Close)`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0;
+  right: 0;
   width: 40px;
   height: 40px;
   padding: 8px;
