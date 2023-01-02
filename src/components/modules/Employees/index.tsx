@@ -21,7 +21,10 @@ export const Employees = () => {
           <EmployeeFilter employeeFunctions={employeeFunctions} />
           <Grid>
             {employees.map((employee: EmployeeType) => (
-              <Employee small={employee.value.image.small} alt={employee.value.image.alt} key={employee.id} />
+              <Employee
+                name={employee.value.name}
+                function={employee.value.function}
+                small={employee.value.image.small} alt={employee.value.image.alt} key={employee.id} />
             ))}
           </Grid>
         </>
