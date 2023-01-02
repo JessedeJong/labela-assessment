@@ -3,14 +3,19 @@ import Image from 'next/image';
 
 import { EmployeeContainer } from './styled';
 
-export const Employee = ({ employee }) => {
+export interface Props {
+  small: string,
+  alt: string
+}
+
+export const Employee = (props: Props) => {
   return (
     <EmployeeContainer>
       <Image
-        src={`https://cms.labela.nl${employee.value.image.small}`}
+        src={`https://cms.labela.nl${props.small}`}
         width={488}
         height={800}
-        alt={employee.value.image.alt}
+        alt={props.alt}
       />
     </EmployeeContainer>
   );

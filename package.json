@@ -10,7 +10,7 @@
     "npm": ">=7.8.0"
   },
   "scripts": {
-    "start": "next dev -p $([ -f .port ] && cat .port || echo 3000)",
+    "start": "next dev",
     "dev": "npm run start",
     "build": "next build",
     "build:static": "next build && next export",
