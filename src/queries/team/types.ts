@@ -1,6 +1,6 @@
 export type Team = {
     items: {
-        employees: []
+        employees: EmployeeType[]
     }
 };
 
@@ -20,5 +20,6 @@ export type EmployeeType = {
         },
         name: string,
         office_id: string;
+        office_location: string | null;
     }
 }

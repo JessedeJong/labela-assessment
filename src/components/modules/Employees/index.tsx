@@ -3,10 +3,14 @@ import React, { useState } from 'react';
 import { useGetTeam } from 'queries/team';
 import { Grid, Paragraph } from 'common';
 import { Employee, EmployeeFilter } from 'modules';
-import { EmployeeType } from 'types';
+import { EmployeeType, OfficeType } from 'types';
+import { useGetOffices } from 'queries/offices';
 
 export const Employees = () => {
   const { isLoading, data } = useGetTeam();
+  const officesData = useGetOffices();
+  const offices: OfficeType[] = officesData?.data?.items[0].offices || [];
+
   const [ filter, setFilter ] = useState("");
 
   const employees: EmployeeType[] = data?.items[0].employees || [];
@@ -17,6 +21,13 @@ export const Employees = () => {
     if (!employeeFunctions.includes(employee.value.function)) {
       employeeFunctions.push(employee.value.function);
     }
+
+    // Add office location to employee
+    offices.forEach((office) => {
+      if (office.id === employee.value.office_id) {
+        employee.value.office_location = office.value.city
+      }
+    });
   });
 
   // Callback function from child component
